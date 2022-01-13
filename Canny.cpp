@@ -126,8 +126,8 @@ void Canny::edgeConnect(Mat<uchar> &image) {
     for (int i = 1; i < height - 1; ++i) {
         for (int j = 1; j < width - 1; ++j) {
             if (image.ptr(i)[j] == 255) {
-                for (int m = -1; m < 1; ++m) {
-                    for (int n = -1; n < 1; ++n) {
+                for (int m = -1; m <= 1; ++m) {
+                    for (int n = -1; n <= 1; ++n) {
                         if (image.ptr(i + m)[j + n] != 0 && image.ptr(i +m)[j + n] != 255) {
                             image.ptr(i + m)[j + n] = 255;
                         }

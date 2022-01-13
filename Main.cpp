@@ -6,13 +6,14 @@
 using namespace std;
 using namespace cimg_library;
 
-const double lowThresh = 150;
-const double highThresh = 170;
-const double gaussianSigma = 0.5;
+const double lowThresh = 70;
+const double highThresh = 200;
+const double gaussianSigma = 1;
 
 Mat<uchar> transformCimg2Mat(CImg<uchar> Gray_image) {
     int width = Gray_image._width;
     int height = Gray_image._height;
+    cout << width << height <<endl;
     Mat<uchar> mat = Mat<uchar>::zeros(width, height);
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {    
@@ -54,6 +55,7 @@ int main() {
     Mat<uchar> gaussian_img = mat;
     //gaussian_img = canny->gaussianFilter(mat, gaussianSigma);
     transformMat2Cimg(Gray_image, gaussian_img);
+    cout << gaussian_img << endl;
     //Gray_image.display("lena_out");
     Mat<uchar> grad, theta, dst, res;
 	canny->sobel(gaussian_img, grad, theta);
