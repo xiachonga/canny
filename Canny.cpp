@@ -5,22 +5,6 @@ using namespace std;
 
 const double  PI = 3.14159265358979323846;
 
-CImg<uchar> Canny::getGrayImage(CImg<uchar> image) {
-    int width = image._width;
-    int height = image._height;
-    CImg<uchar> Gray_image(width, height, 1, 1, 0);
-    for (int i = 0; i < height; ++i) {
-        for (int j = 0; j < width; ++j) {
-            double r = image(j, i, 0);
-            double g = image(j, i, 1);
-            double b = image(j, i, 2);
-            Gray_image(j, i, 0) = 0.299*r + 0.587*g + 0.114*b;
-        }
-    }
-    return Gray_image;
-
-}
-
 Mat<uchar> Canny::gaussianFilter(Mat<uchar> &image, double sigma) {
     int width = image.getWidth();
     int height = image.getHeight();

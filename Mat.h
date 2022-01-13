@@ -16,7 +16,7 @@ class Mat {
         }
         Mat(T *data_, int width_, int height_) : data(data_), width(width_), height(height_) {}
 
-        T* ptr(int n = 0) const{
+        inline T* ptr(int n = 0) const{
             return data + (n * width);
         }
 
