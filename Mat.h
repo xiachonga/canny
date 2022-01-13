@@ -45,23 +45,23 @@ class Mat {
 
         friend ostream &operator<<(ostream &output, const Mat &mat) {
             output << mat.width << " " << mat.height << "\n";
-            fstream fs;
-            fs.open("data.txt", ios_base::out);
+            //fstream fs;
+            //fs.open("data.txt", ios_base::out);
             for (int i = 0; i < mat.height; ++i) {
                 for (int j = 0; j < mat.width; ++j) {
                     if (sizeof(T) == 1) { 
                         output << (int)mat.ptr(i)[j] << " ";
-                        if (j == mat.width) {
+                        /*if (j == mat.width) {
                             fs<< (int)mat.ptr(i)[j];
                         } else {
                             fs<< (int)mat.ptr(i)[j] <<" ";
-                        }
+                        }*/
                     } else {
                         output << mat.ptr(i)[j] << " ";
                     }
                 }
                 output << "\n";
-                fs<<"\n";
+                //fs<<"\n";
             }
             return output;
         }
