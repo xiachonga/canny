@@ -5,8 +5,8 @@
 
 using namespace std;
 
-const double lowThresh = 70;
-const double highThresh = 200;
+const uint8_t lowThresh = 70;
+const uint8_t highThresh = 200;
 const double gaussianSigma = 1;
 const int height = 512;
 const int width = 512;

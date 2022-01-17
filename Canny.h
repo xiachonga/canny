@@ -13,7 +13,7 @@ class Canny {
         
         void NMS(Mat<uchar> &grad, Mat<uchar> &theta, Mat<uchar> &dst);
 
-        void doubleThreshSelection(Mat<uchar> &image, Mat<uchar> &dst, double lowThresh, double highThresh);
+        void doubleThreshSelection(Mat<uchar> &image, Mat<uchar> &dst, uint8_t lowThresh, uint8_t highThresh);
 
         void edgeConnect(Mat<uchar> &image);
 
